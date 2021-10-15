@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="cardapio.css">
+	<title>Cardapio</title>
+	<!-- Importacao de fonte -->
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap');
+	</style>
+</head>
+
+<body onload="main.listarAlimentos()">
+	<div id="container">
+		<div>
+			<img id="hd" src="menuRestaurante.svg">
+    </div>
+
+    <div class="header">
+      <div class="search">
+        <input id="nomePertence" placeholder="Pesquise um Item"> </input>
+        <button class="btn" onClick="main.printPertence()" style="margin-left: 20px" >Pesquisar</button>
+      </div>
+    <div id="alimentosPertence"> </div>
+  </div>
+  
+  <div class="pesquisaalimento">
+    <h1 style="margin-bottom: 30px; float: left;">Lanches</h1>
+
+    <button class="btnOrdenar" onclick="main.imprimirAlimentosOrdenados();">Ordenar</button>
+    <div id="listaalimentos" class="listaalimentos">
+    </div>
+  
+  </div>
+
+  <div id="adicionar">
+    <h1 style="margin-bottom: 30px; float: left;">Adicionar Lanche</h1>
+    <button class="btnAdicionar" onclick="main.adicionarLista();">Adicionar</button>
+    <div>
+      <h4 style="margin-left:10px;">Nome</h4>
+      <input id="nome" style= "margin-bottom:20px;" placeholder="Digite um nome..." label="Digite um nome..."></input>
+      <h4 style="margin-left:10px;">Valor</h4>
+      <input id="preco" style= "margin-bottom:20px" placeholder="Digite um preço..." label="Digite um preço..."></input>  
+      <h4 style="margin-left:10px;">Detalhe</h4>   
+      <input id="detalhe" style= "margin-bottom:20px" placeholder="Digite o detalhe..." label="Digite o detalhe..."></input>
+    </div>    
+  </div>
+  
+  <div class="footer">Grupo: Eduarda Ottoni, Jean Coelho, Joao Victor Prado e Julia Araujo</div>
+
+  <aside id="aside">
+    <img id="img_aside" src="Teste2.png">
+  <aside>
+
+  <script src="kotlin.js"></script>
+	<script src="main.js"></script>
+</body>
+
+</html>
