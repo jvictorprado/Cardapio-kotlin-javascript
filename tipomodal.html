@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de Comida</title>
+    <style>
+        body {
+            background-color: #f6c479;
+            background-image: url(https://cdn.discordapp.com/attachments/764668867775561749/838352436002291722/Teste3.png); 
+            background-size: 65%;
+            background-repeat: no-repeat; 
+            background-position: 160%;
+        }
+        
+        #nome {
+            font-weight: bolder;
+            padding: 5px;
+            color: #ed7c4d;
+            margin-bottom: 10%;
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+        }
+                        
+        #titulo {
+            font-size: 15px;
+            color: black;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 30px;
+        }
+        
+        .detalhes {
+            background-color: rgba(255,255,255,0.3); 
+            width: 400px;
+            height: 300px;
+            padding: 30px;
+            padding-bottom: 70px;
+            border-radius: 30px;
+            margin: 130px;
+            background-position: 50%;
+        }
+        
+        .btn-voltar {
+           font-family: Roboto, sans-serif, bold;
+          font-size: 15px;
+          border: none;
+          color:white;
+          width: 119px;
+          height: 40px
+          margin: 0 30px 0 23px;
+          border-radius: 10px;
+          box-shadow: 0px 4px 7px -6px rgba(0,0,0,0.75);
+          background-color: #ed7c4d;
+        }
+        
+         .btn-voltar:hover {
+            background-color: #edaa4d;
+        }
+        
+        h1 {
+            margin-top: 0px;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+                       
+        a.btn-voltar {
+            background-color: red;
+            padding: 10px;
+            border-radius: 10px;
+            position: absolute;
+            top: 45px;
+            left: 600px;
+            transition: all 500ms ease;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .btn-voltar:hover {
+            background-color: rgb(149, 4, 4);
+        }
+    </style>
+</head>
+
+<body ="printarDetalhes()">
+    <a href="https://Cardapio.projetolpf.repl.co">
+      <button class="btn-voltar">
+        ← Voltar
+      </button>
+    </a>  
+
+    <div class="detalhes">
+      <div id="titulo">
+        <h1>Descrição do Item</h1>
+      </div>
+      <div class= "descricao"> 
+    
+        <div id="nome"></div>
+        <div id="detalhe"></div>
+        <script>
+          var url = window.location.href; 
+          var resultado = url.split('?');
+          var nome =  resultado[1];
+          var detalhe = resultado[2];
+          var aux = detalhe;
+          aux = aux.replaceAll('%20',' ');
+          aux = aux.replaceAll('%C3%A3','ã');
+          aux = aux.replaceAll('%C3%A7','ç');
+          aux = aux.replaceAll('%C3%BA','ú');
+
+          function printarDetalhes(){
+            document.getElementById("nome").innerHTML = nome;
+            document.getElementById("detalhe").innerHTML = aux;
+          }
+
+          window.onload = function() {
+            printarDetalhes();
+          };
+        </script>
+
+      </div>
+    </div>
+    <script src="kotlin.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
